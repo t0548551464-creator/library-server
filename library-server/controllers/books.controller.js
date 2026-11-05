@@ -136,9 +136,9 @@ const borrowBook = async (req, res, next) => {
       { _id: id, isBorrowed: false },
       {
         $set: { isBorrowed: true },
-        $push: { borrows: { date: new Date(), userCode } }, // שימוש ב- new Date() כיוון ש- req.currentDate לא מוגדר
+        $push: { borrows: { date: new Date(), userCode } }, 
       },
-      { new: true },
+      { new: true }
     );
 
     if (!book) {
@@ -166,7 +166,7 @@ const returnBook = async (req, res, next) => {
     const book = await Book.findOneAndUpdate(
       { _id: id, isBorrowed: true },
       { $set: { isBorrowed: false } },
-      { new: true },
+      { new: true }
     );
 
     if (!book) {

@@ -1,8 +1,10 @@
 const express = require('express');
+const connectDB = require('./config/db');
 const booksRouter = require('./routes/books'); // ייבוא הראוטר של הספרים
 const usersRouter = require('./routes/users'); // ייבוא הראוטר של המשתמשים
 
 const app = express();
+connectDB();
 app.use(express.json()); // מאפשר קריאת נתונים בפורמט JSON
 
 // חיבור הראוטרים לנתיבים הראשיים
