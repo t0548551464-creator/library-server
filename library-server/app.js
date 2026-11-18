@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const booksRouter = require('./routes/books'); // ייבוא הראוטר של הספרים
